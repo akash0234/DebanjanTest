@@ -1,17 +1,17 @@
-import logo from './logo.svg';
-import Counter from './Counter';
-import Layout from './Layout';
-import './App.css';
 
-function App() {
+import "./App.css"
+import React from 'react'
+import Banner from './component/Banner'
+import Layout from "./component/Layout"
+
+const App = () => {
   return (
-    <div className="App">
+    <div>
       <Layout>
-        <Counter start={10} />
+        <Banner/>
       </Layout>
     </div>
-  );
+  )
 }
 
-
-export default App;
+export default App
