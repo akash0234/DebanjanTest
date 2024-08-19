@@ -1,12 +1,11 @@
 import React from 'react'
 
-const Header = (props) => {
+const Header = () => {
     return (
         <>
         
             <header>
                 <div class="container">
-                        {props.name}
                     <a href="#" class="logo">Your <b>Website</b></a>
                     <ul class="links">
                         <li>Home</li>
