@@ -6,7 +6,7 @@ import Footer from './Footer'
 const Layout = ({children}) => {
     return (
         <div>
-            <div class="landing-page">
+            <div className="landing-page">
                 <Header />
                 <main>
                     {children}

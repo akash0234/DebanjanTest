@@ -3,13 +3,17 @@ import "./App.css"
 import React from 'react'
 import Banner from './component/Banner'
 import Layout from "./component/Layout"
-import Counter from "./component/Counter"
+import Batch from "./component/Batch"
+// import Cities2 from "./component/Cities2"
+
+
+
 const App = () => {
   return (
     <div>
       <Layout>
         <Banner/>
-        <Counter/>
+        <Batch/>
       </Layout>
     </div>
   )

@@ -5,11 +5,11 @@ import React from 'react'
 const Landing = () => {
   return (
     <div>
-         <div class="landing-page">
+         <div className="landing-page">
         <header>
-          <div class="container">
-            <a href="#" class="logo">Your <b>Website</b></a>
-            <ul class="links">
+          <div className="container">
+            <a href="#" className="logo">Your <b>Website</b></a>
+            <ul className="links">
               <li>Home</li>
               <li>About Us</li>
               <li>Work</li>
@@ -18,14 +18,14 @@ const Landing = () => {
             </ul>
           </div>
         </header>
-        <div class="content">
-          <div class="container">
-            <div class="info">
+        <div className="content">
+          <div className="container">
+            <div className="info">
               <h1>Looking For Inspiration</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
               <button>Button name</button>
             </div>
-            <div class="image">
+            <div className="image">
               {/* <img src="https://i.postimg.cc/65QxYYzh/001234.png"> */}
             </div>
           </div>

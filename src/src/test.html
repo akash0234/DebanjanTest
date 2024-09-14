@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid rgb(17, 125, 100);
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="">
+        <label for="fName">First Name</label>
+        <input type="text" name="fName" id="fName" />
+        <br>
+        <label for="lName">Last Name</label>
+        <input type="text" name="lName" id="lName">
+        <br />
+        <label for="username">User Name</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <br />
+        <label for="pass">Password</label>
+        <input type="password" name="pass" id="pass">
+        <br>
+
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="Male" id="male">
+        <br>
+
+        <label for="female">Female</label>
+        <input type="radio" name="gender" value="Female" id="female">
+        <br>
+
+        <label for="check10">10th</label>
+        <input type="checkbox" name="check"  id="check10" value="10th">
+        <br>
+
+        <label for="check12">12th</label>
+        <input type="checkbox" name="check" id="check12" value="12th">
+        <br>
+
+        <label for="checkGrad">Graduation</label>
+        <input type="checkbox" name="check" id="checkGrad" value="Graduation">
+        <br>
+
+        <br>
+        <label for="dob">Birth Date</label>
+        <input type="date" name="dob" id="dob" value="2024-11-02">
+        <br>
+        <label for="dateOfJoin">Date of Join</label>
+        <input type="date" name="dateOfJoin" id="dateOfJoin">
+        <br>
+
+        <label for="num">Phone Number</label>
+        <input type="number" name="num" id="num" min="1" max="9999999999">
+        <br>
+
+        <button id="formSubmit" type="button">Submit </button>
+    </form>
+
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Employee Name</td>
+                <td>Employee Email</td>
+                <td>Date of Join</td>
+                <td>Phone Number</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+            <!-- Employee rows will be appended here -->
+        </tbody>
+    </table>
+
+    <script>
+        const btnElem = document.getElementById("formSubmit");
+
+        let firstName = document.getElementById("fName");
+        let lastName = document.getElementById("lName");
+        let username = document.getElementById("username");
+        let email = document.getElementById("email");
+        let dateOfJoin = document.getElementById("dateOfJoin");
+        let phoneNumber = document.getElementById("num");
+
+        btnElem.addEventListener('click', function () {
+            let empArray = {
+                firstName: firstName.value,
+                lastName: lastName.value,
+                username: username.value,
+                email: email.value,
+                dateOfJoin: dateOfJoin.value,
+                phoneNumber: phoneNumber.value
+            };
+
+            console.log(empArray);
+
+            // Add the data to the table
+            let tableBody = document.getElementById("employeeTableBody");
+            let newRow = tableBody.insertRow();
+
+            newRow.insertCell(0).innerText = `${empArray.firstName} ${empArray.lastName}`;
+            newRow.insertCell(1).innerText = empArray.email;
+            newRow.insertCell(2).innerText = empArray.dateOfJoin;
+            newRow.insertCell(3).innerText = empArray.phoneNumber;
+            newRow.insertCell(4).innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
+        });
+
+        function deleteRow(button) {
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+
+</html>

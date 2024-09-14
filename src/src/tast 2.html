@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post">
+        <label for="countryName">Enter Country</label>
+        <input type="text" name="countryName" id="countryName">
+
+        <button id="formSubmit" type="button"> Search </button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+
+        const button = document.getElementById("formSubmit")
+        const countryElem = document.getElementById("countryName")
+
+
+        button.addEventListener("click", function () {
+
+            const countryName = countryElem.value;
+
+            var raw = {"country":countryName};
+
+            $.ajax({
+                type: "POST",
+                url: "https://countriesnow.space/api/v0.1/countries/cities", // Replace with your server URL
+               
+                dataType: "json",
+                data: JSON.stringify(raw),  // Convert the JSON object to a string
+                contentType: "application/json",  // Specify the content type
+                success: function(response) {
+                   console.log(response);
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        })
+
+
+
+    </script>
+</body>
+
+</html>

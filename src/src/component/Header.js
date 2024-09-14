@@ -5,9 +5,9 @@ const Header = () => {
         <>
         
             <header>
-                <div class="container">
-                    <a href="#" class="logo">Your <b>Website</b></a>
-                    <ul class="links">
+                <div className="container">
+                    <a href="#" className="logo">Your <b>Website</b></a>
+                    <ul className="links">
                         <li>Home</li>
                         <li>About Us</li>
                         <li>Work</li>
